@@ -10,3 +10,6 @@ def pdf_to_text(pdf_path, output_txt):
         for page_num in range(14, 51):
             page = pdf_reader.pages[page_num]
             text += page.extract_text()
+
+    with open(output_txt, 'w', encoding='utf-8') as txt_file:
+        txt_file.write(text)
