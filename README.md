@@ -1,3 +1,28 @@
-# RAG Chatbot
+# RAG Chatbot for PDFs
 
-A chatbot using Retrieval Augmented Generation that allows the user to chat with a pdf
+## Installation
+```
+# Clone this repository
+git clone https://github.com/mfts/papermark.git
+cd papermark
+```
+
+```
+# Installing the libraries (refer to requirements.txt)
+pip install langchain==0.2.16
+pip install pinecone==5.1.0
+pip install PyPDF2==3.0.1
+pip install python-dotenv==1.0.1
+pip install streamlit==1.37.1
+```
+
+```
+# Update API keys in .env
+PINECONE_API_KEY=XXXXXXXX
+HUGGINGFACE_API_KEY=XXXXXXXX
+```
+
+```
+# Execution
+streamlit run main.py
+```
