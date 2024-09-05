@@ -3,8 +3,8 @@
 ## Installation
 ```
 # Clone this repository
-git clone https://github.com/mfts/papermark.git
-cd papermark
+git clone https://github.com/AntaraGanapathy/rag-chatbot.git
+cd rag-chatbot
 ```
 
 ```
