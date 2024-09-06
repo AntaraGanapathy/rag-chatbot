@@ -21,3 +21,12 @@ class ChatBot():
     pdf_to_text(input_path, output_path)
 
     load_dotenv()
+
+    loader = TextLoader('./sample.txt')
+    documents = loader.load()
+    text_splitter = CharacterTextSplitter(chunk_size=1000, chunk_overlap=4)
+    docs = text_splitter.split_documents(documents)
+
+    embeddings = HuggingFaceEmbeddings()
+
+    pc = pinecone(api_key=os.getenv('PINECONE_API_KEY'))
