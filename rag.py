@@ -11,3 +11,13 @@ from pinecone import ServerlessSpec
 from langchain import PromptTemplate
 from langchain.schema.runnable import RunnablePassthrough
 from langchain.schema.output_parser import StrOutputParser
+
+
+class ChatBot():
+    input_path = './sample.pdf'
+
+    output_path = './sample.txt'
+
+    pdf_to_text(input_path, output_path)
+
+    load_dotenv()
