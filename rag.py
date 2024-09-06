@@ -30,3 +30,14 @@ class ChatBot():
     embeddings = HuggingFaceEmbeddings()
 
     pc = pinecone(api_key=os.getenv('PINECONE_API_KEY'))
+
+    index_name = "pdf-rag"
+
+    if index_name not in pc.list_indexes().names():
+        pc.create_index(name=index_name, metric="cosine", dimension=768, spec=ServerlessSpec(
+            cloud="aws",
+            region="us-east-1"
+        ))
+        docsearch = Pinecone.from_documents(docs, embeddings, index_name=index_name)
+    else:
+        docsearch = Pinecone.from_existing_index(index_name, embeddings)
