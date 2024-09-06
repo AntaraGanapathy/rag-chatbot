@@ -26,3 +26,18 @@ HUGGINGFACE_API_KEY=XXXXXXXX
 # Execution
 streamlit run main.py
 ```
+
+## Pinecone account set-up
+- Create an account at [https://www.pinecone.io/](https://www.pinecone.io/)
+- Click on 'Projects' in the top menu bar, and navigate to 'API Keys' in the side bar
+- Note down the default API key and add it to the .env file
+
+## Hugging Face account setup
+- Create an account at [https://huggingface.co/join](https://huggingface.co/join)
+- Click on 'Profile' in the sidebar and navigate to 'Edit Profile'
+- Under 'Access Tokens' click on the 'Create a new token' button
+- Select 'Read' and enter the token name
+- Note down the API key displayed and add it to the .env file
+
+
+
