@@ -29,7 +29,7 @@ streamlit run main.py
 
 ## Pinecone account set-up
 - Create an account at [https://www.pinecone.io/](https://www.pinecone.io/)
-- Click on 'Projects' in the top menu bar, and navigate to 'API Keys' in the side bar
+- Click on 'Projects' in the top menu bar, and navigate to 'API Keys' in the sidebar
 - Note down the default API key and add it to the .env file
 
 ## Hugging Face account setup
