@@ -14,7 +14,7 @@ from langchain.schema.output_parser import StrOutputParser
 from langchain import PromptTemplate
 
 
-class RAG_bot():
+class RagBot():
     input_path = './sample.pdf'
 
     output_path = './sample.txt'
@@ -35,10 +35,8 @@ class RAG_bot():
     index_name = "pdf-rag"
 
     if index_name not in pc.list_indexes().names():
-        pc.create_index(name=index_name, metric="cosine", dimension=768, spec=ServerlessSpec(
-            cloud="aws",
-            region="us-east-1"
-        ))
+        pc.create_index(name=index_name, metric="cosine", dimension=768,
+                        spec=ServerlessSpec(cloud="aws", region="us-east-1"))
         docsearch = Pinecone.from_documents(docs, embeddings, index_name=index_name)
     else:
         docsearch = Pinecone.from_existing_index(index_name, embeddings)
@@ -49,10 +47,12 @@ class RAG_bot():
         huggingfacehub_api_token=os.getenv('HUGGINGFACE_API_KEY')
     )
 
-    template = """
-      You are a fortune teller. The user will ask you questions about the future of humanity. Use following piece of context to answer the question. 
-      If you don't know the answer, just say you don't know. 
-      You answer with short and concise answer, no longer than 4 sentences.
+    template = """You are a fortune teller. The user will ask you questions about the future of humanity. Use 
+    following piece of context to answer the question. 
+    
+    If you don't know the answer, just say you don't know. 
+    
+    You answer with short and concise answer, no longer than 4 sentences. 
 
       Context: {context}
       Question: {question}

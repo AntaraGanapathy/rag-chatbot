@@ -42,5 +42,6 @@ streamlit run main.py
 ## Customization
 - Replace the `sample.pdf` file with the PDF of choice
 - Edit filename in `rag.py`
+- Select an appropriate range of pages needed to train the chatbot in `data.py`
 - Customize the default template in `rag.py` to the desired use case
 
