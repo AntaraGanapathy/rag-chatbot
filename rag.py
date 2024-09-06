@@ -11,9 +11,10 @@ from pinecone import ServerlessSpec
 from langchain import PromptTemplate
 from langchain.schema.runnable import RunnablePassthrough
 from langchain.schema.output_parser import StrOutputParser
+from langchain import PromptTemplate
 
 
-class ChatBot():
+class RAG_bot():
     input_path = './sample.pdf'
 
     output_path = './sample.txt'
@@ -41,3 +42,9 @@ class ChatBot():
         docsearch = Pinecone.from_documents(docs, embeddings, index_name=index_name)
     else:
         docsearch = Pinecone.from_existing_index(index_name, embeddings)
+
+    repo_id = "mistralai/Mixtral-8x7B-Instruct-v0.1"
+    llm = HuggingFaceHub(
+        repo_id=repo_id, model_kwargs={"temperature": 0.8, "top_p": 0.8, "top_k": 50},
+        huggingfacehub_api_token=os.getenv('HUGGINGFACE_API_KEY')
+    )
