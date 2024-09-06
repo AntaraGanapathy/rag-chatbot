@@ -39,5 +39,8 @@ streamlit run main.py
 - Select 'Read' and enter the token name
 - Note down the API key displayed and add it to the .env file
 
-
+## Customization
+- Replace the `sample.pdf` file with the PDF of choice
+- Edit filename in `rag.py`
+- Customize the default template in `rag.py` to the desired use case
 
