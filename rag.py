@@ -48,3 +48,14 @@ class RAG_bot():
         repo_id=repo_id, model_kwargs={"temperature": 0.8, "top_p": 0.8, "top_k": 50},
         huggingfacehub_api_token=os.getenv('HUGGINGFACE_API_KEY')
     )
+
+    template = """
+      You are a fortune teller. The user will ask you questions about the future of humanity. Use following piece of context to answer the question. 
+      If you don't know the answer, just say you don't know. 
+      You answer with short and concise answer, no longer than 4 sentences.
+
+      Context: {context}
+      Question: {question}
+      Answer: 
+
+      """
