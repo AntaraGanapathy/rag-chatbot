@@ -11,7 +11,6 @@ from pinecone import ServerlessSpec
 from langchain import PromptTemplate
 from langchain.schema.runnable import RunnablePassthrough
 from langchain.schema.output_parser import StrOutputParser
-from langchain import PromptTemplate
 
 
 class RagBot():
@@ -59,3 +58,11 @@ class RagBot():
       Answer: 
 
       """
+    prompt = PromptTemplate(template=template, input_variables=["context", "question"])
+
+    rag_chain = (
+            {"context": docsearch.as_retriever(), "question": RunnablePassthrough()}
+            | prompt
+            | llm
+            | StrOutputParser()
+    )
