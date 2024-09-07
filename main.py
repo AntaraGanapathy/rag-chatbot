@@ -19,3 +19,8 @@ if "messages" not in st.session_state.keys():
 for message in st.session_state.messages:
     with st.chat_message(message["role"]):
         st.write(message["content"])
+
+if input := st.chat_input():
+    st.session_state.messages.append({"role": "user", "content": input})
+    with st.chat_message("user"):
+        st.write(input)
