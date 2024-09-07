@@ -7,7 +7,7 @@ def pdf_to_text(pdf_path, output_txt):
 
         text = ''
 
-        for page_num in range(14, 51):
+        for page_num in range(16, 69):
             page = pdf_reader.pages[page_num]
             text += page.extract_text()
 
