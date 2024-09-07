@@ -14,6 +14,7 @@ pip install pinecone==5.1.0
 pip install PyPDF2==3.0.1
 pip install python-dotenv==1.0.1
 pip install streamlit==1.37.1
+pip install sentence-transformers
 ```
 
 ```
