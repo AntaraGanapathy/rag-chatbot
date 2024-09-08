@@ -10,8 +10,8 @@ with st.sidebar:
 
 def generate_response(input):
     result = bot.rag_chain.invoke(input)
-    return result
-    # return result.split("Answer:", 1)[1]
+    # return result
+    return result.split("Answer:", 1)[1]
 
 
 if "messages" not in st.session_state.keys():
