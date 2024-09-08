@@ -10,7 +10,8 @@ with st.sidebar:
 
 def generate_response(input):
     result = bot.rag_chain.invoke(input)
-    return result.split("Answer:", 1)[1]
+    return result
+    # return result.split("Answer:", 1)[1]
 
 
 if "messages" not in st.session_state.keys():
@@ -27,7 +28,7 @@ if input := st.chat_input():
 
 if st.session_state.messages[-1]["role"] != "assistant":
     with st.chat_message("assistant"):
-        with st.spinner("Checking with Chanakya.."):
+        with st.spinner("Checking with context.."):
             response = generate_response(input)
             st.write(response)
     message = {"role": "assistant", "content": response}
