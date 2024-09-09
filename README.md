@@ -8,13 +8,16 @@ cd rag-chatbot
 ```
 
 ```
-# Installing the libraries (refer to requirements.txt)
+# Installing the libraries
+pip install -r requirements.txt
+
+#
 pip install langchain-community==0.2.16
 pip install pinecone==5.1.0
 pip install PyPDF2==3.0.1
 pip install python-dotenv==1.0.1
 pip install streamlit==1.37.1
-pip install sentence-transformers
+pip install sentence-transformers==3.0.1
 ```
 
 ```
