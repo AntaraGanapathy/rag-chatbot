@@ -14,7 +14,8 @@ cd rag-chatbot
 # Installing the libraries
 pip install -r requirements.txt
 
-#
+---
+
 pip install langchain-community==0.2.16
 pip install pinecone==5.1.0
 pip install PyPDF2==3.0.1
