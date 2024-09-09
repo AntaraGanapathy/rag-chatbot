@@ -1,5 +1,8 @@
 # RAG Chatbot for PDFs
 
+![Alt Text](example.gif)
+
+
 ## Installation
 ```
 # Clone this repository
